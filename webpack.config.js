@@ -14,6 +14,11 @@ module.exports = {
 		path: path.join(__dirname, 'dist'),
 		filename: "[name].bundle.js"
 	},
+  devServer: {
+    compress: true,
+    stats: "errors-only",
+    open: true
+  },
 	module: {
     rules: [
 			{
@@ -31,9 +36,9 @@ module.exports = {
 	      }
 	    },
       {
-        test: /\.html$/,
+        test: /\.pug$/,
         use: {
-          loader: 'html-loader?interpolate'
+          loader: 'pug-loader'
         }
       },
       {
@@ -63,7 +68,7 @@ module.exports = {
   plugins: [
   	extractCSS,
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/template.pug'
     }),
     new ImageminPlugin({test: /\.(png|jpg|gif)$/})
   ]

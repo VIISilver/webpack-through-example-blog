@@ -1,0 +1,28 @@
+-
+	const cloud = require('./imgs/cloud-strife.jpg'),
+				tifa = require('./imgs/tifa-lockhart.jpg'),
+				barret = require('./imgs/barret-wallace.jpg');
+
+doctype html
+html(lang='en')
+head
+	meta(charset='UTF-8')
+	title Final Fantasy VII MiniWiki
+	link(rel='stylesheet' href='main.css')
+body
+	section(class='characters')
+		a(href=`${cloud.src}`
+			class='hero-pic replace')
+			img(src=`${cloud.placeholder}`
+					class='hero-preview' 
+					alt='cloud strife')
+		a(href=`${tifa.src}`
+			class='hero-pic replace')
+			img(src=`${tifa.placeholder}`
+					class='hero-preview' 
+					alt='tifa lockhart')
+		a(href=`${barret.src}`
+			class='hero-pic replace')
+			img(src=`${barret.placeholder}`
+					class='hero-preview' 
+					alt='barret wallace')
